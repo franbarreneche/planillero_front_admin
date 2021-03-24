@@ -1,16 +1,13 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-  </div>
+  <section class="section">
+    <figure class="figure is-centered">
+      <img alt="Vue logo" src="../assets/logo.png" class="image">
+    </figure>
+  </section>
 </template>
 
 <script>
-// @ is an alias to /src
-
-
 export default {
-  name: 'Home',
-  components: {
-  }
+  name: 'Home'
 }
 </script>
