@@ -4,7 +4,7 @@
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
                 <img
                     src="@/assets/INDIANA_BLANCO_HORIZONTAL_150.png"
-                    alt="Lightweight UI components for Vue.js based on Bulma"
+                    alt="Logo Torneos Indiana"
                 >
             </b-navbar-item>
         </template>

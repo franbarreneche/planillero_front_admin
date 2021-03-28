@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <navbar />
-    <router-view/>
+    <router-view class="has-background-light" />
   </div>
 </template>
 
 <script>
-import Navbar from './components/parts/navbar.vue';
+import Navbar from './components/Navbar.vue';
 export default {
   components : {
     Navbar,

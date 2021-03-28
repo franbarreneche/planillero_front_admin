@@ -86,6 +86,20 @@ class BaseApiService {
         this.handleErrors(err);
       }
     }
+    async search(conf = {}) {
+      try {
+        const response = await fetch(this.getUrl()+'search', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(conf)
+        });
+        return response.json();        
+      } catch (err) {
+        this.handleErrors(err);
+      }
+    }
   }
 
   class VeedoresApiService extends ReadOnlyApiService {
