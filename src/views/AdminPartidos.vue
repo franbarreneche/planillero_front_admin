@@ -1,13 +1,15 @@
 <template>
   <section class="section">
+    <div class="box">
     <filtros @cambiosede="cambioSede" @cambiodia="cambioDia" />
-    <h1 class="title">PARTIDOS</h1>
+    <h2 class="subtitle">Lista de Partidos</h2>
     <lista-partidos :dia="dia" :sede="sede_id" />
-    <div class="buttons">
+    <div class="buttons mt-4">
       <b-button @click="pdf" type="is-info" icon-left="pdf-box">PDF</b-button>
       <b-button @click="csv" type="is-dark" icon-left="file-delimited"
         >CSV</b-button
       >
+    </div>
     </div>
   </section>
 </template>

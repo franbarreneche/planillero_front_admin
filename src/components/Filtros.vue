@@ -1,5 +1,5 @@
 <template>
-  <div class="field is-horizontal">
+  <b-field grouped>
       <b-field label="Elegir el día:">
             <b-datepicker
                 v-model = "dia"                 
@@ -14,7 +14,7 @@
                 <option v-for="sede in sedes" :key="sede.id" :value="sede.id">{{sede.nombre}}</option>
             </b-select>
         </b-field>
-  </div>
+  </b-field>
 </template>
 
 <script>

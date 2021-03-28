@@ -1,19 +1,35 @@
 <template>
   <div class="section">
-    <h1 class="title">TORNEOS</h1>
-    <lista-torneos dia="Lunes"/>
-    <lista-torneos dia="Martes"/>
-    <lista-torneos dia="Miercoles"/>
-    <lista-torneos dia="Jueves"/>
-    <lista-torneos dia="Sabado"/>
-    <lista-torneos dia="Domingo"/>
+    <div class="columns">
+      <div class="column">
+        <acordeon-torneos @ver-torneo="showTorneo" /> 
+      </div>
+      <div class="column">
+        <nuevo-torneo />
+        <torneo :torneo="torneo"/>
+      </div>
+    </div>   
   </div>
 </template>
 
 <script>
-import ListaTorneos from '../components/ListaTorneos.vue'
+import AcordeonTorneos from '../components/AcordeonTorneos.vue'
+import NuevoTorneo from '../components/NuevoTorneo.vue'
+import Torneo from '../components/Torneo.vue'
+
 export default {
-  components: { ListaTorneos },
-  name : 'AdminTorneos'
+  components: {AcordeonTorneos,Torneo, NuevoTorneo },
+  name : 'AdminTorneos',
+  data() {
+    return {
+      torneo : Object
+    }
+  },
+  methods : {
+    showTorneo(event) {
+      this.torneo = event
+    }
+  }
+
 }
 </script>

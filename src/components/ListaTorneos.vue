@@ -1,30 +1,15 @@
 <template>
-  <div class="card mb-2">
-    <header class="card-header has-background-dark">
-      <p class="card-header-title has-text-light">{{ dia }}</p>
-    </header>
-    <div class="card-body">
-    <b-table :data="torneos" :loading="isLoading">
-      <b-table-column field="anio" label="Año" v-slot="props">
-        {{ props.row.anio }}
+  <b-table :data="torneos" :loading="isLoading" narrowed>
+      <b-table-column field="datos" label="Torneo" v-slot="props">
+        {{ props.row.anio }} - {{ props.row.temporada }} - {{ props.row.genero }} - {{ props.row.categoria }}
       </b-table-column>
-      <b-table-column field="temporada" label="Temporada" v-slot="props">
-        {{ props.row.temporada }}
-      </b-table-column>
-      <b-table-column field="genero" label="Genero" v-slot="props">
-        <b-tag v-if="props.row.genero == 'M'" type="is-info">M</b-tag>
-        <b-tag v-else type="is-danger">F</b-tag>
-      </b-table-column>
-      <b-table-column field="categoria" label="Categoria" v-slot="props">
-        {{ props.row.categoria }}
-      </b-table-column>
-      <b-table-column label="Acciones" v-slot="props">
+      <b-table-column  v-slot="props" label="Acciones"> 
         <div class="buttons">
           <b-button
             type="is-primary"
             size="is-small"
             icon-right="pencil"
-            @click="$emit('ver-torneo', props.row.id)"
+            @click="$emit('ver-torneo', props.row)"
           >
           </b-button>
           <b-button
@@ -37,8 +22,6 @@
         </div>
       </b-table-column>
     </b-table>
-    </div>
-  </div>
 </template>
 
 <script>
